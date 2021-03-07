@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div id="dateAndCity">
+        <span id="date">
+            <%=new Date(body.location.localtime).toDateString() %>
+        </span>
+        <br>
+        <span id="temp"><%=body.current.temp_c%> °C</span>
+        <br>
+        <span id="city"><%=body.location.name %> | <%=body.location.country %></span>
+    </div>
+
+    <div class="info">
+        <span class="attribute">Chance of Rain</span>
+        <br>
+        <span class="value"><%=rain%> %</span>
+    </div>
+
+    <div class="info">
+        <span class="attribute">Air Pressure</span>
+        <br>
+        <span class="value"><%=body.current.pressure_mb%> P</span>
+    </div>
+
+    <div class="info">
+        <span class="attribute">Wind Speed</span>
+        <br>
+        <span class="value"><%=body.current.wind_kph%> km/h</span>
+    </div>
+
+    <div class="info">
+        <span class="attribute">Humidity</span>
+        <br>
+        <span class="value"><%=body.current.humidity%> %</span>
+    </div>
+
+    <div class="forecast">
+        <img src=<%=body.current.condition.icon%> alt="img" class="img"/>
+        <br>
+        <span class="value"><%=body.current.condition.text%></span>
+    </div>
+
+    <div class="inputs">
+        <button class="btn">Find Me</button>
+        <button class="btn">Change Location</button>
+    </div>
+</body>
+</html>
